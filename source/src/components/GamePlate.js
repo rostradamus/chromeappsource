@@ -12,10 +12,21 @@ class GamePlate extends Component {
     }
   }
 
+  handleKeyPress(event) {
+    if(event.key === ' ') {
+      console.log('enter press here! ');
+    }
+  }
+
   render() {
     const { width, height } = this.state;
     return (
-      <svg className="game_plate" width={ width } height={ height }>
+      <svg
+        className="game_plate"
+        width={ width }
+        height={ height }
+        onKeyDown={event => this.handleKeyPress(event)}
+        tabIndex="0" >
         <CurrBlock width= { width } height={ height } />
       </svg>
     );

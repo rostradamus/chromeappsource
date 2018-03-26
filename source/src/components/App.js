@@ -6,7 +6,7 @@ import GamePlate from './GamePlate';
 class App extends Component {
   render() {
     return (
-      <div className="App">
+      <div className="App" >
         <h1>
           Stackit!
         </h1>

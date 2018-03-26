@@ -5,8 +5,8 @@ export const BlockActions = {
 };
 
 export const CurrBlockActions = {
-  MOVE_LEFT: "MOVE_BLOCK",
-  MOVE_RIGHT: "MOVE_RIGHT",
-  RELEASE_BLOCK: "RELEASE_BLOCK",
-  CREATE_BLOCK: "CREATE_BLOCK"
+  MOVE: "MOVE_BLOCK",
+  TURN: "TURN",
+  RELEASE: "RELEASE_BLOCK",
+  CREATE: "CREATE_BLOCK"
 };
