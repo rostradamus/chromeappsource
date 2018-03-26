@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Rectangle } from 'react-shapes';
-import './CurrBlock.css'
+import { currBlockActions } from '../actions';
+import './CurrBlock.css';
 
 class CurrBlock extends Component {
 
@@ -9,14 +10,19 @@ class CurrBlock extends Component {
       super(props);
   }
 
+  componentDidMount() {
+    this.props.moveLeft(this.props.block.x);
+  }
+
   shouldComponentUpdate(nextProps, nextState) {
-    return false;
+    return this.props.block.x !== nextProps.block.x;
   }
 
   render() {
-    const block = this.props.block;
+    const tWidth = this.props.width, tHeight = this.props.height;
+    const { width, height, x, y } = this.props.block;
     return (
-      <Rectangle className="curr_rect" width={ block.width } height={ block.height } style={{ x: block.x, y: block.y }} />
+      <rect className="curr_rect" width={ width } height={ height } x={ x } y={ tHeight - height - y } />
     );
   }
 }
@@ -26,4 +32,4 @@ const mapStateToProps = state => ({
   block: state.currBlock
 });
 
-export default connect(mapStateToProps)(CurrBlock);
+export default connect(mapStateToProps, currBlockActions)(CurrBlock);
