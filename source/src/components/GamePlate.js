@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './GamePlate.css';
 import { connect } from 'react-redux';
+import { gamePlateActions } from '../actions';
 import CurrBlock from './CurrBlock';
 
 class GamePlate extends Component {
@@ -14,7 +15,8 @@ class GamePlate extends Component {
 
   handleKeyPress(event) {
     if(event.key === ' ') {
-      console.log('enter press here! ');
+      const { width, height, x, y, speed } = this.props.currBlock;
+      this.props.createNewBlock({ width, height, x, y, speed });
     }
   }
 
@@ -25,7 +27,7 @@ class GamePlate extends Component {
         className="game_plate"
         width={ width }
         height={ height }
-        onKeyDown={event => this.handleKeyPress(event)}
+        onKeyDown={ this.handleKeyPress.bind(this) }
         tabIndex="0" >
         <CurrBlock width= { width } height={ height } />
       </svg>
@@ -33,4 +35,8 @@ class GamePlate extends Component {
   }
 }
 
-export default GamePlate;
+const mapStateToProps = state => ({
+  currBlock: state.currBlock
+});
+
+export default connect(mapStateToProps, gamePlateActions)(GamePlate);

@@ -1,7 +1,9 @@
 export const BlockHistActions = {
+
 };
 
-export const BlockActions = {
+export const GamePlateActions = {
+  CREATE_BLOCK: "CREATE_BLOCK"
 };
 
 export const CurrBlockActions = {

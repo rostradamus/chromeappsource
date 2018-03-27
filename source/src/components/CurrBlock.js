@@ -29,13 +29,13 @@ class CurrBlock extends Component {
       const { block, move, turn, width } = this.props;
       setTimeout(() => {
         if (block.x <= 0) {
-            turn("R");
+            turn(1);
           }
         else if (block.x >= (width - block.width) / 2 ) {
-          turn("L");
+          turn(-1);
         }
-        let rate = 1;
-        (block.dir === "L") ? move(-rate) : move(rate); 
+        let rate = block.speed;
+        move();
         idx += 1
         takeStep = scrollStep * idx
         window.requestAnimationFrame(animationStep.bind(this));
