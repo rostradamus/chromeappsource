@@ -19,13 +19,8 @@ class CurrBlock extends Component {
   }
 
   animateBlock() {
-    let duration    = 1000 //in ms
-    let fps         = 100 //frames per second
-    let scrollStep  = 1 / ((duration / 1000) * fps)
-    let takeStep    = scrollStep
-    let idx         = 1
-
-    let animationStep = function() {
+    const fps = 100 //frames per second
+    const animationStep = function() {
       const { block, move, turn, width } = this.props;
       setTimeout(() => {
         if (block.x <= 0) {
@@ -36,8 +31,6 @@ class CurrBlock extends Component {
         }
         let rate = block.speed;
         move();
-        idx += 1
-        takeStep = scrollStep * idx
         window.requestAnimationFrame(animationStep.bind(this));
       }, 1000 / fps);
     }

@@ -36,6 +36,9 @@ export default (state = INITIAL_STATE, action) => {
       };
       return Object.assign({...state}, nextBlock);
     }
+    case CurrBlockActions.CLEAR_GAME: {
+      return INITIAL_STATE;
+    }
     default:{
       return state;
     }

@@ -5,6 +5,9 @@ import { GamePlateActions } from './types';
 const currBlockActions = dispatch => ({
   createNewBlock: block => {
     dispatch({ type: GamePlateActions.CREATE_BLOCK, payload: block });
+  },
+  clearGame: () => {
+    dispatch({ type: GamePlateActions.CLEAR_GAME, payload: {} });
   }
 });
 
