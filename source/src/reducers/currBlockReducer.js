@@ -1,7 +1,7 @@
 import { CurrBlockActions } from "../actions/types";
 
 const INITIAL_STATE = { 
-  width: 40,
+  width: 60,
   height: 20,
   x: 0,
   y: 0,

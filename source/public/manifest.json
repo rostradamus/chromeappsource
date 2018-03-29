@@ -1,6 +1,8 @@
 {
   "short_name": "React App",
   "name": "Create React App Sample",
+  "version": "1.2.5.0",
+  "description": "Demonstrates permissions in extensions",
   "icons": [
     {
       "src": "favicon.ico",
@@ -9,7 +11,11 @@
     }
   ],
   "start_url": "./index.html",
+  "chrome_url_overrides": {
+    "newtab": "index.html"
+  },
   "display": "standalone",
   "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "background_color": "#ffffff",
+  "manifest_version": 2
 }
