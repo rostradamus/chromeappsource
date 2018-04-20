@@ -12,7 +12,7 @@ class PrevBlock extends Component {
     const { width, height, x, y } = this.props.block;
     return (
       <rect
-        className="prev_rect"
+        className="block prev_block"
         width={ width }
         height={ height }
         x={ x * 2 }

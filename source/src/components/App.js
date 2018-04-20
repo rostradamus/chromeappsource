@@ -11,6 +11,7 @@ class App extends Component {
         <h1>
           Stackit!
         </h1>
+        <div className="score">Score: {this.props.gameState.score} </div>
         <GamePlate />
       </div>
     );
@@ -18,6 +19,7 @@ class App extends Component {
 }
 
 const mapStateToProps = state => ({
+  gameState: state.gameState,
   prevBlocks: state.blockHistory,
   currBlock: state.currBlock
 });

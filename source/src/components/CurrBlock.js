@@ -8,6 +8,13 @@ class CurrBlock extends Component {
 
   constructor(props) {
       super(props);
+      this.state = {
+        color: {
+          r: 0,
+          g: 0,
+          b: 0
+        }
+      }
   }
 
   componentDidMount() {
@@ -46,11 +53,11 @@ class CurrBlock extends Component {
     }
     return (
       <rect 
-        className="curr_rect" 
-        width={ width } 
-        height={ height } 
-        x={ x } 
-        y={ tHeight - height - y } 
+        className="block curr_block"
+        width={ width }
+        height={ height }
+        x={ x }
+        y={ tHeight - height - y }
         style={ blockStyle } />
     );
   }

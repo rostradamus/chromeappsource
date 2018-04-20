@@ -4,3 +4,19 @@
   margin-left: auto;
   display: flex;
 }
+
+.block {
+  fill: black;
+  -webkit-animation-name: color-change; /* Safari 4.0 - 8.0 */
+  -webkit-animation-duration: 10s; /* Safari 4.0 - 8.0 */
+  -webkit-animation-iteration-count: infinite; /* Safari 4.0 - 8.0 */
+  -webkit-animation-fill-mode: forwards;
+}
+@-webkit-keyframes color-change {
+    0%   {fill:black;}
+    20%  {fill:red;}
+    40%  {fill:yellow;}
+    60%  {fill:blue;}
+    80%  {fill:green;}
+    100% {fill:black;}
+}

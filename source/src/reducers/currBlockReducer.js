@@ -9,7 +9,7 @@ const INITIAL_STATE = {
   speed: 1
 };
 const SIZE_CHANGE_RATE = 0.9;
-const SPEED_CHANGE_RATE = 1.1;
+const SPEED_CHANGE_RATE = 1.01;
 
 
 // dir (direction): -1 denotes left, 1 denotes right
